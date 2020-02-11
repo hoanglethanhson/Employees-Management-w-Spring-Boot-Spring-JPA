@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create an employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body class="container">
+    <form class="form-horizontal" th:action="@{/employee-create}" method="POST" th:object="${employee}">
+        Name: <input  th:field="*{fullName}"/>
+        <input class="btn btn-success" type="submit" value="Submit"/>
+    </form>
+    <a th:href="@{/employee-list}">Go to employees list</a>
+</body>
+</html>
