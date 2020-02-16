@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body class="container">
+<h2>Employees List</h2>
+<table border="1" class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="employee : ${employeeList}">
+        <tr>
+            <td><p th:text="${employee.id}"></p></td>
+            <td><p th:text="${employee.fullName}"></p></td>
+            <td><a th:href="@{/employee/view/} + ${employee.id}">View</a></td>
+            <td><a th:href="@{/employee-edit/} + ${employee.id}">Edit</a></td>
+            <td><a th:href="@{/employee/delete/} + ${employee.id}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<a th:href="@{/employee-save}">Create new employee here!</a>
+</body>
+</html>

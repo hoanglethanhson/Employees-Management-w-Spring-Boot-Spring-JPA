@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Employee Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body class="container">
+    <h2>Update employee information</h2>
+    <form class="form-horizontal" th:action="@{/employee-update}" method="post" th:object="${employee}">
+        ID: <input class="form-control input-sm" th:field="*{id}" readonly="readonly"> <br>
+        Name: <input class="form-control input-sm" th:field="*{fullName}">
+        <input type="submit" value="Submit">
+    </form>
+    <a th:href="@{/employee-list}">Go to employees list</a>
+</body>
+</html>
